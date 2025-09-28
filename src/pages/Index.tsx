@@ -11,7 +11,6 @@ import LinkedInCarousel from '../components/LinkedInCarousel';
 
 const Index = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-  const [selectedFAQ, setSelectedFAQ] = useState<number | null>(null);
 
 
   const openVSL = () => {
@@ -26,40 +25,6 @@ const Index = () => {
     window.open('https://www.linkedin.com/in/yojimmykim/', '_blank');
   };
 
-  const faqData = [
-    {
-      question: "How fast will I see results?",
-      answer: "Many see traction within 14–30 days; compounding growth continues monthly."
-    },
-    {
-      question: "Do I have to post daily?",
-      answer: "No. We design a cadence that fits your bandwidth; you approve assets; we handle the ops."
-    },
-    {
-      question: "Who writes the content?",
-      answer: "We do—based on your voice, expertise, and interviews."
-    },
-    {
-      question: "Will you handle DMs?",
-      answer: "We draft scripts and frameworks; execution is tailored to your comfort and compliance preferences."
-    },
-    {
-      question: "Is it safe to grow followers this way?",
-      answer: "Yes. We use organic, manual, compliant methods aligned to LinkedIn best practices."
-    },
-    {
-      question: "What access do you need?",
-      answer: "Temporary access to your profile assets and scheduling tools; we keep security tight and can work through approved workflows."
-    },
-    {
-      question: "What if I don't get clients?",
-      answer: "Our engagement is outcomes-driven with a don't-pay guarantee tied to agreed metrics."
-    },
-    {
-      question: "Who is this not for?",
-      answer: "Low-ticket offers, audiences outside LinkedIn, or teams unwilling to approve assets."
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-bg text-text-primary">
@@ -71,139 +36,116 @@ const Index = () => {
         {/* Animated background gradient */}
          <div className="absolute inset-0 gradient-animated opacity-5 -z-10" />
          
-         <div className="text-center max-w-4xl mx-auto px-4">
-           {/* Main Headline - $0 Strategy */}
-           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 tracking-tight">
-             THE <span className="text-accent">$0 STRATEGY:</span> <br className="hidden sm:block" />
-             <span className="text-accent">5 Organic Clients From LinkedIn</span> <br className="hidden md:block" />
-             Every 4 Weeks.
+         <div className="text-center max-w-5xl mx-auto px-4">
+           {/* Main Headline */}
+           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
+             We Will Help Coaches, Consultants & Entrepreneurs get <span className="text-accent">8x-10x linkedin impressions</span> and Sign <span className="text-accent">1-5 High Ticket Clients Per Month</span>
           </h1>
           
-           {/* Risk-Free Guarantee - Clean & Simple */}
-           <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-12 text-accent">
-             You Only Pay After We Close Them.
+           {/* Guarantee Line */}
+           <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 text-accent">
+             (100% Organically, No Ad Spend) Or You Don't Pay
            </div>
 
-           {/* Description - Concise */}
-           <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-12 leading-relaxed">
-             Get <strong className="text-accent font-semibold">5+ high-ticket clients</strong> every 4 weeks with <strong className="text-accent font-semibold">zero ad spend</strong>—no posting daily or upfront fees.
+           {/* Subheading */}
+           <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 text-accent">
+             Let Us Handle LinkedIn, So You Can Handle Clients
+           </div>
+
+           {/* Description */}
+           <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed">
+             Your future clients are already on LinkedIn, let's make sure they find you.
            </p>
 
-           {/* CTA Buttons - More Spaced */}
-           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+           {/* VSL Video Embed */}
+           <div className="mb-8 max-w-4xl mx-auto">
+             <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
+               <iframe
+                 src="https://www.loom.com/embed/711b933ba9d54f78b50486f9da431a0f?sid=c69b5e3b-2612-449d-ad0c-b851dbbbeffc"
+                 className="absolute inset-0 w-full h-full"
+                 title="LinkedIn Strategy VSL"
+                 allowFullScreen
+                 loading="lazy"
+               />
+             </div>
+           </div>
+
+           {/* CTA Button */}
+           <div className="mb-16">
             <button
               onClick={() => setIsCalendlyOpen(true)}
-               className="btn-gradient px-8 py-4 text-lg font-semibold focus-ring w-full sm:w-auto"
+              className="btn-gradient px-8 py-4 text-lg font-semibold focus-ring"
             >
-               Book Your Free Scale with LinkedIn Audit
-            </button>
-            <button
-              onClick={openVSL}
-               className="btn-glass px-8 py-4 text-lg font-semibold focus-ring flex items-center justify-center gap-2 w-full sm:w-auto"
-            >
-              <Play size={20} />
-              Watch 3-min VSL
+                Book your free audit today
             </button>
           </div>
 
-           {/* Trust Elements - Simplified */}
+           {/* Trust Elements */}
            <div className="space-y-6">
              <div className="flex flex-wrap justify-center gap-4">
                <MetricChip>💰 $0 Upfront</MetricChip>
-               <MetricChip>🎯 5 Clients</MetricChip>
+               <MetricChip>🎯 1-5 Clients</MetricChip>
                <MetricChip>🚫 No Ads</MetricChip>
-               <MetricChip>⏰ 4 Weeks</MetricChip>
+               <MetricChip>📈 8x-10x Impressions</MetricChip>
           </div>
 
-             <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 max-w-2xl mx-auto">
-               <p className="text-sm md:text-base font-semibold text-accent">
-                 RISK-FREE: Pay $0 Until They Sign
-          </p>
              </div>
-           </div>
         </div>
       </SectionContainer>
 
       {/* Pain Section */}
       <SectionContainer id="pain" className="bg-bg-1">
-        <div className="text-center mb-12 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8">
-            You didn't become a coach to fight algorithms.
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 px-4">
+            For Coaches, Consultants & Entrepreneurs Ready to Charge 10x.
           </h2>
+          <p className="text-lg md:text-xl text-text-secondary mb-6 md:mb-8 px-4">
+            You didn't become a coach to chase engagement, fight algorithms, or spend 20+ hours a week figuring out content.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto px-4">
-          {/* Pain Points */}
-          <div className="space-y-4 md:space-y-6">
-            <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-bg-2 border border-line-subtle">
+        <div className="max-w-4xl mx-auto mb-8 md:mb-12 px-4">
+          <h3 className="text-xl md:text-2xl font-bold text-center mb-6 md:mb-8">
+            Let's be honest. Most of YOU say one of two things before they start:
+          </h3>
+          <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+            <div className="flex items-center gap-3 p-4 rounded-lg bg-bg-2 border border-line-subtle transition-all duration-300 hover:scale-105">
               <XCircle className="text-error flex-shrink-0" size={20} />
-              <span className="text-base md:text-lg">"I hate social media."</span>
+              <span className="text-sm md:text-base">"I hate social media."</span>
             </div>
-            <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-bg-2 border border-line-subtle">
+            <div className="flex items-center gap-3 p-4 rounded-lg bg-bg-2 border border-line-subtle transition-all duration-300 hover:scale-105">
               <XCircle className="text-error flex-shrink-0" size={20} />
-              <span className="text-base md:text-lg">"I don't know what to post."</span>
+              <span className="text-sm md:text-base">"I never want to do it."</span>
             </div>
-            <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-bg-2 border border-line-subtle">
+            <div className="flex items-center gap-3 p-4 rounded-lg bg-bg-2 border border-line-subtle transition-all duration-300 hover:scale-105">
               <XCircle className="text-error flex-shrink-0" size={20} />
-              <span className="text-base md:text-lg">"I don't have time."</span>
+              <span className="text-sm md:text-base">"I don't know how to do it"</span>
+            </div>
+            <div className="flex items-center gap-3 p-4 rounded-lg bg-bg-2 border border-line-subtle transition-all duration-300 hover:scale-105">
+              <XCircle className="text-error flex-shrink-0" size={20} />
+              <span className="text-sm md:text-base">"I don't have time"</span>
             </div>
           </div>
-
-          {/* Desired Outcomes */}
-          <div className="space-y-4 md:space-y-6">
-            <h3 className="text-lg md:text-xl font-semibold mb-4 text-accent">What you want instead:</h3>
-            <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-success-muted border border-success/20">
-              <CheckCircle className="text-success flex-shrink-0" size={20} />
-              <span className="text-base md:text-lg">A pipeline of inbound, qualified leads</span>
-            </div>
-            <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-success-muted border border-success/20">
-              <CheckCircle className="text-success flex-shrink-0" size={20} />
-              <span className="text-base md:text-lg">A brand that commands premium pricing</span>
-            </div>
-            <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-success-muted border border-success/20">
-              <CheckCircle className="text-success flex-shrink-0" size={20} />
-              <span className="text-base md:text-lg">Clients chasing you (not the other way around)</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-8 md:mt-12">
-          <button
-            onClick={() => setIsCalendlyOpen(true)}
-            className="link-underline text-accent font-semibold text-base md:text-lg inline-flex items-center gap-2"
-          >
-            Get your free audit
-            <ArrowRight size={18} />
-          </button>
+          <p className="text-center text-text-secondary mt-6 md:mt-8 max-w-2xl mx-auto">
+            You're too busy running your business to figure out what to post, who to engage, or how to stay consistent.
+          </p>
+          <p className="text-center text-text-secondary mt-4 max-w-2xl mx-auto">
+            And the idea of "being everywhere" just feels overwhelming.
+          </p>
         </div>
       </SectionContainer>
 
       {/* Why Us Section */}
       <SectionContainer id="why-us">
         <div className="text-center mb-12 md:mb-16 px-4">
-           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8">
-            Why we're different: <br className="md:hidden" />
-             <span className="text-accent">Scale with LinkedIn that works while you work.</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8">
+            Why We're Different: <br className="sm:hidden" />
+            <span className="text-accent">We Make LinkedIn Work For You</span>
           </h2>
-        </div>
-
-        {/* Benefits */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16 px-4">
-          <div className="text-center p-4 md:p-6 glass rounded-lg">
-            <TrendingUp className="mx-auto mb-3 md:mb-4 text-accent" size={40} />
-            <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Credibility & visibility</h3>
-            <p className="text-sm md:text-base text-text-secondary">that compounds (no daily posting needed)</p>
-          </div>
-          <div className="text-center p-4 md:p-6 glass rounded-lg">
-            <Target className="mx-auto mb-3 md:mb-4 text-accent" size={40} />
-            <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Inbound leads</h3>
-            <p className="text-sm md:text-base text-text-secondary">from targeted engagement (comments, DMs, influencer lists)</p>
-          </div>
-          <div className="text-center p-4 md:p-6 glass rounded-lg sm:col-span-2 lg:col-span-1">
-            <Star className="mx-auto mb-3 md:mb-4 text-accent" size={40} />
-            <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Positioning that sells</h3>
-            <p className="text-sm md:text-base text-text-secondary">from "one of many" to <strong>Category of One</strong></p>
-          </div>
+          <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+            You get credibility, visibility & inbound leads… <br className="hidden sm:block" />
+            👉 Without posting daily, chasing engagement, or wasting hours online.
+          </p>
         </div>
 
         {/* Trust Badges Section */}
@@ -212,128 +154,103 @@ const Index = () => {
         </div>
 
         {/* Deliverables Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 mb-12 px-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-12 px-4">
           {[
-            "Premium thought-leadership posts & carousels",
-            "Hooks engineered for conversions", 
-            "Profile optimized to top 1% standards",
-            "High-impact visuals & brand system",
-            "Targeted follower growth (ICP)",
-            "Market & competitor research for positioning",
-            "Sales assets that work 24/7",
-            "Consistent 5–20 qualified calls/month",
-            "Done-for-you sales funnel & consultations"
+            "✅ Premium thought-leadership posts & carousels",
+            "✅ Hooks engineered for conversions", 
+            "✅ Targeted engagement (comments, DMs, influencer lists)",
+            "✅ Profile optimized to top 1% standards",
+            "✅ High-impact visuals & branding",
+            "✅ targeted follower growth  (ICP)",
+            "✅ Market & competitor research for positioning",
+            "✅ Sales assets that work 24/7",
+            "✅ Consistent 5–20 qualified calls/month",
+            "✅ Done-for-you sales funnel & consultations"
           ].map((item, index) => (
-            <div key={index} className="flex items-start gap-2 md:gap-3 p-3 md:p-4 bg-bg-1 rounded-lg border border-line-subtle">
-              <CheckCircle className="text-success flex-shrink-0 mt-0.5" size={16} />
-              <span className="text-xs md:text-sm">{item}</span>
+            <div key={index} className="flex items-start gap-3 p-3 md:p-4 bg-bg-1 rounded-lg border border-line-subtle transition-all duration-300 hover:scale-105 hover:bg-bg-2">
+              <span className="text-sm md:text-base">{item}</span>
             </div>
           ))}
         </div>
 
-        <div className="text-center px-4">
+        <div className="text-center mb-8 px-4">
+          <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 max-w-2xl mx-auto mb-6">
+            <p className="text-lg md:text-xl font-bold text-accent">
+              ⚡ 100% Done-For-You. Results Guaranteed.
+            </p>
+          </div>
+          
+          <div className="bg-bg-2 rounded-xl p-6 md:p-8 border border-line-subtle mx-4">
+            <h3 className="text-xl md:text-2xl font-bold text-center mb-4">
+              If You're a Coach, Consultant, or Entrepreneur Who Wants To:
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-bg-1 border border-line-subtle">
+                <CheckCircle className="text-success flex-shrink-0" size={20} />
+                <span className="text-sm md:text-base">Attract a steady stream of inbound leads</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-bg-1 border border-line-subtle">
+                <CheckCircle className="text-success flex-shrink-0" size={20} />
+                <span className="text-sm md:text-base">Convert more of them into high-paying clients</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-bg-1 border border-line-subtle">
+                <CheckCircle className="text-success flex-shrink-0" size={20} />
+                <span className="text-sm md:text-base">Become the go-to expert in your industry</span>
+              </div>
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-bg-1 border border-line-subtle">
+                <CheckCircle className="text-success flex-shrink-0" size={20} />
+                <span className="text-sm md:text-base">Avoid wasting time figuring out what to post</span>
+              </div>
+            </div>
+            <p className="text-center text-accent font-bold mb-6">
+              This is for you.
+            </p>
           <button
             onClick={() => setIsCalendlyOpen(true)}
-            className="btn-gradient px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold focus-ring"
+              className="btn-gradient px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold focus-ring"
           >
             See if you qualify
           </button>
+          </div>
         </div>
       </SectionContainer>
 
-      {/* How It Works Section */}
-      <SectionContainer id="how-it-works" className="bg-bg-1">
-        <div className="text-center mb-12 md:mb-16 px-4">
-             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8">
-               Scale with LinkedIn in <span className="text-accent">30 days</span>—done for you
-          </h2>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 px-4">
-          <div className="text-center p-4 md:p-6 glass rounded-lg">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/20 text-accent rounded-full flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4">1</div>
-            <h3 className="font-semibold mb-2 text-sm md:text-base">Day 0–3</h3>
-            <p className="text-text-secondary text-xs md:text-sm">Deep-dive ICP + competitive positioning. We map buyers, angles, and proof.</p>
-          </div>
-          <div className="text-center p-4 md:p-6 glass rounded-lg">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/20 text-accent rounded-full flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4">2</div>
-            <h3 className="font-semibold mb-2 text-sm md:text-base">Day 4–10</h3>
-            <p className="text-text-secondary text-xs md:text-sm">Profile overhaul + asset kit (banner, bio, CTA, proof blocks).</p>
-          </div>
-          <div className="text-center p-4 md:p-6 glass rounded-lg">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/20 text-accent rounded-full flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4">3</div>
-            <h3 className="font-semibold mb-2 text-sm md:text-base">Day 11–20</h3>
-            <p className="text-text-secondary text-xs md:text-sm">Content engine + engagement matrix (hooks, carousels, influencer list, comment system, DM scripts).</p>
-          </div>
-          <div className="text-center p-4 md:p-6 glass rounded-lg">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/20 text-accent rounded-full flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4">4</div>
-            <h3 className="font-semibold mb-2 text-sm md:text-base">Day 21–30</h3>
-            <p className="text-text-secondary text-xs md:text-sm">Pipeline acceleration (lead magnets, call-booking nudges, offer calibration).</p>
-          </div>
-        </div>
-
-        <div className="text-center bg-accent/10 border border-accent/20 rounded-lg p-4 md:p-6 mx-4">
-          <p className="text-base md:text-lg mb-4">
-            <strong>Outcome:</strong> Predictable <strong className="text-accent">inbound leads</strong> and <strong className="text-accent">booked calls</strong>, without your daily input.
-          </p>
-          <button
-            onClick={() => setIsCalendlyOpen(true)}
-             className="btn-gradient px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold focus-ring"
-          >
-             Book your free Scale with LinkedIn audit
-          </button>
-        </div>
-      </SectionContainer>
 
       {/* Value Stack Section */}
       <SectionContainer id="value-stack">
         <div className="text-center mb-12 md:mb-16 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8">
-            What you <span className="text-accent">get</span> (and what you <span className="text-error">never do again</span>)
+            Your Time is Money, We Save You Both
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 px-4">
-          {/* What You Get */}
-          <div>
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-success">✅ What You Get</h3>
-            <div className="grid gap-3 md:gap-4">
-              {[
-                "Thought-leadership posts (weekly cadence)",
-                "Carousel design system",
-                "Hook library & headline tests",
-                "Profile copy + creative",
-                "Targeted engagement ops (comments/DMs)",
-                "ICP follower growth",
-                "Market & competitor research",
-                "Sales assets (DM scripts, offer one-pager)",
-                "Funnel consults + optimization"
+        <div className="max-w-4xl mx-auto px-4">
+          <h3 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-center">You'll never again waste time on:</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+            {[
+              "⛔ Content ideation",
+              "⛔ Posting, engagement, or comment threads",
+              "⛔ Market or competitor research",
+              "⛔ Hook testing or headline writing",
+              "⛔ Creating sales assets from scratch"
               ].map((item, index) => (
-                <div key={index} className="flex items-start gap-2 md:gap-3 p-3 md:p-4 bg-success/5 border border-success/20 rounded-lg">
-                  <CheckCircle className="text-success flex-shrink-0 mt-0.5" size={16} />
-                  <span className="text-sm md:text-base">{item}</span>
+              <div key={index} className="flex items-start gap-3 p-4 bg-bg-1 rounded-lg border border-line-subtle">
+                <span className="text-sm md:text-base">{item}</span>
                 </div>
               ))}
-            </div>
           </div>
 
-          {/* What You Never Do Again */}
-          <div>
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-error">⛔ What You Never Do Again</h3>
-            <div className="space-y-3 md:space-y-4">
-              {[
-                "Content ideation",
-                "Posting or comment threads",
-                "Market research",
-                "Hook testing",
-                "Building sales assets from scratch"
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-2 md:gap-3 p-3 md:p-4 bg-error/5 border border-error/20 rounded-lg">
-                  <XCircle className="text-error flex-shrink-0 mt-0.5" size={16} />
-                  <span className="text-sm md:text-base">{item}</span>
-                </div>
-              ))}
-            </div>
+          <p className="text-center text-lg md:text-xl text-text-secondary mb-8">
+            You don't need to learn how to "do LinkedIn." We already have.
+          </p>
+          
+          <div className="text-center bg-accent/10 border border-accent/20 rounded-lg p-6 md:p-8 mb-8">
+            <p className="text-lg md:text-xl font-bold mb-4">
+              So, do you want to charge Walmart prices forever?
+            </p>
+            <p className="text-lg md:text-xl font-bold text-accent">
+              Or invest the next 6 months in building a brand that lets you charge 10x the average?
+            </p>
           </div>
         </div>
 
@@ -347,13 +264,49 @@ const Index = () => {
         </div>
       </SectionContainer>
 
+      {/* Category of One Section */}
+      <SectionContainer id="category-of-one" className="bg-bg-1">
+        <div className="text-center mb-12 md:mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8">
+            Become a <span className="text-accent">Category of One</span>
+          </h2>
+          <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+            We don't just build brands. We create positioning so strong you no longer compete — you dominate.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto px-4 mb-8">
+          <div className="text-center p-6 glass rounded-lg">
+            <div className="text-4xl mb-4">✨</div>
+            <h3 className="text-lg md:text-xl font-semibold mb-2">Go from invisible to irresistible</h3>
+          </div>
+          <div className="text-center p-6 glass rounded-lg">
+            <div className="text-4xl mb-4">✨</div>
+            <h3 className="text-lg md:text-xl font-semibold mb-2">From DM chasing to DM receiving</h3>
+          </div>
+          <div className="text-center p-6 glass rounded-lg sm:col-span-2 lg:col-span-1">
+            <div className="text-4xl mb-4">✨</div>
+            <h3 className="text-lg md:text-xl font-semibold mb-2">From just "another option" to the only logical choice</h3>
+          </div>
+        </div>
+
+        <div className="text-center bg-accent/10 border border-accent/20 rounded-lg p-6 md:p-8 max-w-3xl mx-auto mx-4">
+          <h3 className="text-xl md:text-2xl font-bold mb-4">Bonus For Action-Takers:</h3>
+          <p className="text-lg md:text-xl mb-4">
+            Get a personalized LinkedIn audit, including a Loom breakdown of your profile, content, and strategy.
+          </p>
+          <p className="text-lg md:text-xl font-bold text-accent">
+            Clarity now. Clients next.
+          </p>
+        </div>
+      </SectionContainer>
+
       {/* Social Proof Section */}
       <SectionContainer id="social-proof" className="bg-bg-1">
         <div className="text-center mb-12 md:mb-16 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
-            Real reviews. <span className="text-accent">Real revenue.</span>
+            Reviews
           </h2>
-          <p className="text-sm md:text-base text-text-secondary">Short Looms + LinkedIn praise + before/after data.</p>
         </div>
 
         {/* Loom Reviews */}
@@ -412,9 +365,9 @@ const Index = () => {
                 <p className="text-accent font-medium text-sm">
                   CEO AT PLATTER
                 </p>
-              </div>
-            </div>
-            
+        </div>
+        </div>
+
             {/* Testimonial Quote */}
              <blockquote className="text-text-secondary text-sm leading-relaxed mb-4">
                "Kushagra's approach to Scale with LinkedIn is absolutely game-changing. His attention to detail and strategic content framework helped me generate 14 qualified calls in just 3 weeks. If LinkedIn is core to your business growth in 2024, I couldn't recommend him highly enough."
@@ -424,7 +377,7 @@ const Index = () => {
             <div className="flex items-center justify-end gap-2 text-accent text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span>View LinkedIn Profile</span>
               <ExternalLink size={12} />
-            </div>
+          </div>
         </div>
 
           {/* Jimmy Kim Testimonial */}
@@ -442,15 +395,15 @@ const Index = () => {
                   loading="lazy"
                 />
                 <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-accent rounded-full border-2 border-bg"></div>
-              </div>
+        </div>
               <div className="flex-1">
                 <h3 className="font-bold text-text-primary text-lg mb-1">
                   JIMMY KIM
                 </h3>
                 <p className="text-accent font-medium text-sm">
                   FOUNDER AT SENDLANE
-          </p>
-        </div>
+            </p>
+          </div>
             </div>
             
             {/* Testimonial Quote */}
@@ -469,77 +422,7 @@ const Index = () => {
 
       </SectionContainer>
 
-      {/* Results Section */}
-      <SectionContainer id="results">
-        <div className="text-center mb-12 md:mb-16 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8">
-            From <span className="text-text-tertiary">invisible</span> to <span className="text-accent">irresistible</span>
-          </h2>
-        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 px-4">
-          <ImpressionsStatsBadge />
-          <CallsStatsBadge />
-          <RevenueStatsBadge className="sm:col-span-2 lg:col-span-1" />
-          </div>
-
-         {/* Scale with LinkedIn Carousel */}
-         <div className="px-4 mb-12">
-           <LinkedInCarousel />
-        </div>
-
-        <div className="text-center px-4">
-          <button
-            onClick={() => setIsCalendlyOpen(true)}
-            className="btn-gradient px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold focus-ring"
-          >
-            Book your free audit
-          </button>
-        </div>
-      </SectionContainer>
-
-      {/* Offer Section */}
-      <SectionContainer id="offer" className="bg-bg-1">
-        <div className="text-center max-w-3xl mx-auto px-4">
-          <div className="mb-6 md:mb-8">
-            <Shield className="mx-auto text-accent mb-4" size={48} />
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6">
-              Results guaranteed. <br />
-              <span className="text-accent">Or you don't pay.</span>
-            </h2>
-            <p className="text-base md:text-lg text-text-secondary mb-6 md:mb-8">
-              We put our skin in the game. If we don't deliver the outcomes we agree on, <strong className="text-text-primary">you don't pay</strong>.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
-            <div className="flex items-center gap-3 p-3 md:p-4 glass rounded-lg">
-              <CheckCircle className="text-success flex-shrink-0" size={20} />
-              <span className="text-sm md:text-base">No ad spend</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 md:p-4 glass rounded-lg">
-              <CheckCircle className="text-success flex-shrink-0" size={20} />
-              <span className="text-sm md:text-base">100% done-for-you</span>
-            </div>
-            <div className="flex items-center gap-3 p-3 md:p-4 glass rounded-lg sm:col-span-2 lg:col-span-1">
-              <CheckCircle className="text-success flex-shrink-0" size={20} />
-              <span className="text-sm md:text-base">Limited client slots</span>
-            </div>
-          </div>
-
-          {/* Inline Trust Badges */}
-          <div className="mb-6 md:mb-8">
-            <InlineTrustBadges />
-          </div>
-
-          <button
-            onClick={() => setIsCalendlyOpen(true)}
-            className="btn-gradient px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold focus-ring"
-          >
-            Claim your slot
-          </button>
-        </div>
-      </SectionContainer>
 
       {/* Pricing Section */}
       <SectionContainer id="pricing">
@@ -581,45 +464,6 @@ const Index = () => {
         </div>
       </SectionContainer>
 
-      {/* FAQ Section */}
-      <SectionContainer id="faq" className="bg-bg-1">
-        <div className="text-center mb-12 md:mb-16 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8">FAQs</h2>
-        </div>
-
-        <div className="max-w-3xl mx-auto space-y-3 md:space-y-4 px-4">
-          {faqData.map((faq, index) => (
-            <div key={index} className="glass rounded-lg overflow-hidden">
-              <button
-                onClick={() => setSelectedFAQ(selectedFAQ === index ? null : index)}
-                className="w-full p-4 md:p-6 text-left flex justify-between items-center hover:bg-bg-2/50 transition-colors"
-              >
-                <span className="font-semibold text-sm md:text-base pr-4">{faq.question}</span>
-                <div className={`transform transition-transform text-lg md:text-xl ${selectedFAQ === index ? 'rotate-45' : ''}`}>
-                  +
-                </div>
-              </button>
-              {selectedFAQ === index && (
-                <div className="px-4 md:px-6 pb-4 md:pb-6 border-t border-line-subtle">
-                  <p className="text-text-secondary pt-3 md:pt-4 text-sm md:text-base">{faq.answer}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-8 md:mt-12 px-4">
-          <button
-            onClick={() => setIsCalendlyOpen(true)}
-             className="btn-gradient px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold focus-ring"
-          >
-             Book Your Free Scale with LinkedIn Audit
-          </button>
-          <p className="text-xs md:text-sm text-text-tertiary mt-3 md:mt-4">
-            <strong className="text-accent">Bonus:</strong> Personalized Loom breakdown of your profile, content, and strategy <span className="text-accent font-semibold">($500 value)</span>.
-          </p>
-        </div>
-      </SectionContainer>
 
       {/* Final CTA Section */}
       <SectionContainer id="final-cta" className="bg-bg-1">
@@ -631,6 +475,13 @@ const Index = () => {
            <p className="text-base md:text-lg text-text-secondary mb-8 md:mb-12">
              Get a personalized Scale with LinkedIn audit with a Loom breakdown of your profile, content, and strategy.
            </p>
+           
+           <button
+             onClick={() => setIsCalendlyOpen(true)}
+             className="btn-gradient px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl font-bold focus-ring mb-8"
+           >
+             Book Your Free LinkedIn Audit Now
+           </button>
 
           {/* Value Proposition Highlights */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
@@ -672,53 +523,7 @@ const Index = () => {
             </div>
           </div>
           
-           {/* Calendly CTA Section */}
-           <div className="glass rounded-lg p-8 max-w-2xl mx-auto text-center">
-             <h3 className="text-xl md:text-2xl font-bold text-text-primary mb-4">
-               Book Your Free Scale with LinkedIn Strategy Call
-             </h3>
-             <p className="text-text-secondary mb-6">
-               Get your personalized $0 Strategy roadmap and discover how to get 5 organic clients from LinkedIn every 4 weeks.
-             </p>
-             
-             <button
-               onClick={() => setIsCalendlyOpen(true)}
-               className="btn-gradient px-8 py-4 text-lg font-semibold focus-ring mb-4"
-             >
-               Book Your Free Strategy Call
-             </button>
-             
-             <div className="flex flex-wrap justify-center gap-4 text-sm text-text-tertiary">
-               <div className="flex items-center gap-2">
-                 <div className="w-2 h-2 bg-accent rounded-full"></div>
-                 <span>15-min call</span>
-               </div>
-               <div className="flex items-center gap-2">
-                 <div className="w-2 h-2 bg-accent rounded-full"></div>
-                 <span>Free audit</span>
-               </div>
-               <div className="flex items-center gap-2">
-                 <div className="w-2 h-2 bg-accent rounded-full"></div>
-                 <span>$500 value</span>
-               </div>
-             </div>
-           </div>
 
-          {/* Additional Value Props */}
-          <div className="mt-8 md:mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            <div className="text-center p-4 glass rounded-lg">
-              <div className="text-2xl font-bold text-accent mb-1">100%</div>
-              <div className="text-sm text-text-secondary">Organic Growth</div>
-            </div>
-            <div className="text-center p-4 glass rounded-lg">
-              <div className="text-2xl font-bold text-accent mb-1">5-20</div>
-              <div className="text-sm text-text-secondary">Qualified Calls/Month</div>
-            </div>
-            <div className="text-center p-4 glass rounded-lg sm:col-span-2 lg:col-span-1">
-              <div className="text-2xl font-bold text-accent mb-1">8-10×</div>
-              <div className="text-sm text-text-secondary">More Impressions</div>
-            </div>
-          </div>
         </div>
       </SectionContainer>
 
@@ -740,25 +545,6 @@ const Index = () => {
                Book Your Free Scale with LinkedIn Audit
              </button>
             
-            {/* Key Metrics */}
-            <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-sm text-text-secondary">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span>8-10× More Impressions</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span>5-20 Qualified Calls/Month</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span>100% Organic Growth</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-accent rounded-full"></div>
-                <span>Results Guaranteed</span>
-              </div>
-            </div>
           </div>
           
           {/* Footer Bottom */}

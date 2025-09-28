@@ -50,12 +50,6 @@ const Navigation = ({ onCalendlyOpen }: NavigationProps) => {
           >
             Pricing
           </button>
-          <button 
-            onClick={() => scrollToSection('faq')}
-            className="hover:text-text-primary transition-colors duration-200"
-          >
-            FAQ
-          </button>
         </nav>
 
         {/* CTA Button */}
@@ -105,12 +99,6 @@ const Navigation = ({ onCalendlyOpen }: NavigationProps) => {
               className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors py-2 px-3 rounded-lg hover:bg-bg-2"
             >
               Pricing
-            </button>
-            <button 
-              onClick={() => scrollToSection('faq')}
-              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors py-2 px-3 rounded-lg hover:bg-bg-2"
-            >
-              FAQ
             </button>
             <div className="pt-4 border-t border-line-subtle">
               <button
