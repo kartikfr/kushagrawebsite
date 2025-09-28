@@ -21,7 +21,7 @@ const Navigation = ({ onCalendlyOpen }: NavigationProps) => {
       <div className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="text-text-primary font-bold text-xl tracking-tight">
-          LinkedIn Growth
+          Scale with LinkedIn
         </a>
 
         {/* Desktop Navigation */}
@@ -81,43 +81,45 @@ const Navigation = ({ onCalendlyOpen }: NavigationProps) => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden glass-subtle border-t border-line-subtle">
-          <nav className="px-4 py-4 space-y-4">
+          <nav className="px-4 py-6 space-y-3">
             <button 
               onClick={() => scrollToSection('how-it-works')}
-              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors"
+              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors py-2 px-3 rounded-lg hover:bg-bg-2"
             >
               How It Works
             </button>
             <button 
               onClick={() => scrollToSection('results')}
-              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors"
+              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors py-2 px-3 rounded-lg hover:bg-bg-2"
             >
               Results
             </button>
             <button 
               onClick={() => scrollToSection('social-proof')}
-              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors"
+              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors py-2 px-3 rounded-lg hover:bg-bg-2"
             >
               Reviews
             </button>
             <button 
               onClick={() => scrollToSection('pricing')}
-              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors"
+              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors py-2 px-3 rounded-lg hover:bg-bg-2"
             >
               Pricing
             </button>
             <button 
               onClick={() => scrollToSection('faq')}
-              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors"
+              className="block w-full text-left text-text-secondary hover:text-text-primary transition-colors py-2 px-3 rounded-lg hover:bg-bg-2"
             >
               FAQ
             </button>
-            <button
-              onClick={onCalendlyOpen}
-              className="btn-gradient w-full px-4 py-3 text-sm font-semibold mt-4"
-            >
-              Book Free Audit
-            </button>
+            <div className="pt-4 border-t border-line-subtle">
+              <button
+                onClick={onCalendlyOpen}
+                className="btn-gradient w-full px-6 py-3 text-sm font-semibold"
+              >
+                Book Free Audit
+              </button>
+            </div>
           </nav>
         </div>
       )}

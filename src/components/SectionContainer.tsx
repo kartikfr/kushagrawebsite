@@ -8,7 +8,7 @@ const SectionContainer = ({ children, className = "", id }: SectionContainerProp
   return (
     <section 
       id={id}
-      className={`w-full py-16 md:py-24 ${className}`}
+      className={`w-full py-12 md:py-16 lg:py-24 ${className}`}
     >
       <div className="mx-auto max-w-6xl px-4">
         {children}
