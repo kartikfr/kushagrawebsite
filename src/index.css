@@ -4,43 +4,43 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Dark Design System - "Black Label" */
+/* Premium Light Design System - White Theme with Green Brand */
 @layer base {
   :root {
     /* Background Layers */
-    --bg-page: 0 0% 4%; /* #0A0A0A */
-    --bg-elev-1: 0 0% 6%; /* #0F0F10 */
-    --bg-elev-2: 240 3% 8%; /* #151517 */
-    --bg-elev-3: 237 10% 11%; /* #1B1B1F */
+    --bg-page: 0 0% 98%; /* Clean white #FAFAFA */
+    --bg-elev-1: 150 5% 96%; /* Very light green-tinted gray #F5F6F5 */
+    --bg-elev-2: 150 3% 94%; /* Slightly darker light gray #F0F1F0 */
+    --bg-elev-3: 150 8% 92%; /* Light gray for hover states #EBECEB */
 
     /* Text Colors */
-    --text-primary: 213 17% 95%; /* #F2F3F5 */
-    --text-secondary: 210 14% 81%; /* #C9CCD1 */
-    --text-tertiary: 210 10% 64%; /* #9AA0A6 */
-    --text-inverse: 225 25% 5%; /* #0B0C0E */
+    --text-primary: 150 10% 8%; /* Dark green-tinted black for headings #151715 */
+    --text-secondary: 150 8% 35%; /* Medium gray for body text #5A5F5A */
+    --text-tertiary: 150 5% 50%; /* Muted gray for secondary text #808580 */
+    --text-inverse: 0 0% 98%; /* White text for buttons on green background #FAFAFA */
 
-    /* Accent Colors - Electric Blue Spectrum */
-    --accent: 210 100% 64%; /* #4DA3FF */
-    --accent-strong: 210 100% 70%; /* #63B3FF */
-    --accent-muted: 210 33% 17%; /* #1D2B3A */
+    /* Accent Colors - Green Growth Theme */
+    --accent: 150 50% 35%; /* Deep Forest Green #2d5f3f */
+    --accent-strong: 150 50% 45%; /* Lighter Forest Green #3d7f5f */
+    --accent-muted: 150 40% 90%; /* Very light green background #E6F0EA */
 
     /* Success/Proof Colors */
     --success: 150 75% 58%; /* #3EE08F */
-    --success-muted: 150 40% 10%; /* #0D1B16 */
+    --success-muted: 150 40% 92%; /* Light green background #EBF3EF */
 
     /* Warning/Error Colors */
     --warning: 45 89% 64%; /* #F4C152 */
     --error: 348 100% 67%; /* #FF5A75 */
 
     /* Glass/Overlay Effects */
-    --glass-fill: 0 0% 100% / 0.06;
-    --glass-stroke: 0 0% 100% / 0.10;
-    --line-subtle: 0 0% 100% / 0.06;
-    --line-medium: 0 0% 100% / 0.10;
+    --glass-fill: 0 0% 0% / 0.04;
+    --glass-stroke: 0 0% 0% / 0.08;
+    --line-subtle: 0 0% 0% / 0.08;
+    --line-medium: 0 0% 0% / 0.12;
 
     /* Modal Overlays */
-    --scrim-80: 220 20% 5% / 0.80;
-    --scrim-40: 220 20% 5% / 0.40;
+    --scrim-80: 0 0% 100% / 0.85;
+    --scrim-40: 0 0% 100% / 0.40;
 
     /* Border Radius */
     --radius-xs: 6px;
@@ -49,18 +49,18 @@
     --radius-lg: 18px;
     --radius-pill: 999px;
 
-    /* Shadows for Dark Mode */
-    --shadow-elev-1: 0 1px 0 rgb(255 255 255 / 0.02), 0 8px 24px rgb(0 0 0 / 0.45);
-    --shadow-elev-2: 0 1px 0 rgb(255 255 255 / 0.04), 0 16px 40px rgb(0 0 0 / 0.55);
-    --shadow-glow: 0 0 24px rgb(99 179 255 / 0.24);
+    /* Shadows for Light Mode */
+    --shadow-elev-1: 0 1px 3px rgb(0 0 0 / 0.08), 0 4px 12px rgb(0 0 0 / 0.06);
+    --shadow-elev-2: 0 2px 6px rgb(0 0 0 / 0.10), 0 8px 24px rgb(0 0 0 / 0.08);
+    --shadow-glow: 0 0 20px rgb(45 95 63 / 0.20);
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #4DA3FF 0%, #7C5CFF 50%, #B06BFF 100%);
-    --gradient-subtle: linear-gradient(180deg, rgb(10 10 10 / 0.8) 0%, rgb(15 15 16 / 0.6) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(150, 50%, 35%) 0%, hsl(145, 45%, 48%) 50%, hsl(160, 65%, 75%) 100%);
+    --gradient-subtle: linear-gradient(180deg, rgb(250 250 250 / 0.8) 0%, rgb(245 246 245 / 0.6) 100%);
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
     background: hsl(var(--bg-page));
   }
 
@@ -100,7 +100,7 @@
   .btn-gradient {
     color: hsl(var(--text-inverse));
     background: var(--gradient-primary);
-    border: 1px solid rgb(255 255 255 / 0.18);
+    border: 1px solid hsl(var(--accent) / 0.2);
     border-radius: var(--radius-pill);
     font-weight: 600;
     transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -132,7 +132,7 @@
   .btn-glass:hover {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: var(--shadow-elev-2), 0 0 12px rgb(255 255 255 / 0.1);
+    box-shadow: var(--shadow-elev-2), 0 0 12px rgb(0 0 0 / 0.05);
     transform: translateY(-1px);
   }
 
@@ -180,7 +180,7 @@
 
   /* Animated Gradient Background */
   .gradient-animated {
-    background: linear-gradient(-45deg, #4DA3FF, #7C5CFF, #B06BFF, #4DA3FF);
+    background: linear-gradient(-45deg, hsl(150, 50%, 35%), hsl(145, 45%, 48%), hsl(160, 65%, 75%), hsl(150, 50%, 35%));
     background-size: 400% 400%;
     animation: gradientMove 10s ease infinite;
   }
@@ -198,31 +198,31 @@
   #calendly-modal-embed iframe,
   #calendly-modal-embed .calendly-popup-content,
   #calendly-modal-embed .calendly-popup-content * {
-    background: hsl(0 0% 4%) !important;
-    background-color: hsl(0 0% 4%) !important;
+    background: hsl(0 0% 98%) !important;
+    background-color: hsl(0 0% 98%) !important;
   }
 
-  /* Force dark background on all Calendly elements */
+  /* Force light background on all Calendly elements */
   #calendly-modal-embed iframe {
-    background: hsl(0 0% 4%) !important;
-    background-color: hsl(0 0% 4%) !important;
+    background: hsl(0 0% 98%) !important;
+    background-color: hsl(0 0% 98%) !important;
     border: none !important;
     border-radius: 0 !important;
   }
 
-  /* Override all possible white backgrounds */
+  /* Override all possible dark backgrounds */
   #calendly-modal-embed [style*="background"],
   #calendly-modal-embed [style*="background-color"],
-  #calendly-modal-embed div[style*="white"],
-  #calendly-modal-embed div[style*="#fff"],
-  #calendly-modal-embed div[style*="#ffffff"],
-  #calendly-modal-embed .calendly-inline-widget[style*="white"],
-  #calendly-modal-embed .calendly-inline-widget[style*="#fff"] {
-    background: hsl(0 0% 4%) !important;
-    background-color: hsl(0 0% 4%) !important;
+  #calendly-modal-embed div[style*="black"],
+  #calendly-modal-embed div[style*="#000"],
+  #calendly-modal-embed div[style*="#000000"],
+  #calendly-modal-embed .calendly-inline-widget[style*="black"],
+  #calendly-modal-embed .calendly-inline-widget[style*="#000"] {
+    background: hsl(0 0% 98%) !important;
+    background-color: hsl(0 0% 98%) !important;
   }
 
-  /* Force text color to be visible on dark background */
+  /* Force text color to be visible on light background */
   #calendly-modal-embed *,
   #calendly-modal-embed span,
   #calendly-modal-embed div,
@@ -233,14 +233,14 @@
   #calendly-modal-embed h4,
   #calendly-modal-embed h5,
   #calendly-modal-embed h6 {
-    color: hsl(213 17% 95%) !important;
+    color: hsl(150 10% 8%) !important;
   }
 
-  /* Override any black text */
-  #calendly-modal-embed [style*="color: black"],
-  #calendly-modal-embed [style*="color: #000"],
-  #calendly-modal-embed [style*="color: #000000"] {
-    color: hsl(213 17% 95%) !important;
+  /* Override any white text */
+  #calendly-modal-embed [style*="color: white"],
+  #calendly-modal-embed [style*="color: #fff"],
+  #calendly-modal-embed [style*="color: #ffffff"] {
+    color: hsl(150 10% 8%) !important;
   }
 
   /* Calendly button styling to match your design */
@@ -249,9 +249,9 @@
   #calendly-modal-embed input[type="button"],
   #calendly-modal-embed input[type="submit"] {
     background: var(--gradient-primary) !important;
-    background-color: #4DA3FF !important;
-    color: hsl(225 25% 5%) !important;
-    border: 1px solid rgb(255 255 255 / 0.18) !important;
+    background-color: hsl(150, 50%, 35%) !important;
+    color: hsl(0 0% 98%) !important;
+    border: 1px solid hsl(var(--accent) / 0.2) !important;
     border-radius: var(--radius-pill) !important;
     font-weight: 600 !important;
   }
@@ -270,13 +270,13 @@
 
   /* Calendly Inline Widget Optimizations */
   .calendly-inline-widget {
-    background: hsl(0 0% 4%) !important;
+    background: hsl(0 0% 98%) !important;
     border-radius: var(--radius-lg) !important;
     overflow: hidden !important;
   }
 
   .calendly-inline-widget iframe {
-    background: hsl(0 0% 4%) !important;
+    background: hsl(0 0% 98%) !important;
     border-radius: var(--radius-lg) !important;
     border: none !important;
   }
@@ -392,12 +392,110 @@
       -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
     }
+    
+    /* Prevent horizontal overflow on mobile */
+    .overflow-x-hidden {
+      overflow-x: hidden;
+    }
+  }
+
+  /* Safe area utilities for notched devices */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  .safe-area-left {
+    padding-left: env(safe-area-inset-left, 0);
+  }
+  
+  .safe-area-right {
+    padding-right: env(safe-area-inset-right, 0);
+  }
+  
+  /* Touch-friendly interactions */
+  @media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets on touch devices */
+    button, a, [role="button"] {
+      min-height: 44px;
+    }
+    
+    /* Remove hover effects on touch devices to prevent sticky states */
+    .hover\:scale-105:hover,
+    .hover\:scale-\[1\.02\]:hover {
+      transform: none;
+    }
+    
+    /* Use active states instead for touch feedback */
+    .active\:scale-\[0\.98\]:active {
+      transform: scale(0.98);
+    }
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent pull-to-refresh on mobile */
+  body {
+    overscroll-behavior-y: contain;
+  }
+
+  /* Better tap highlight */
+  * {
+    -webkit-tap-highlight-color: rgba(45, 95, 63, 0.1);
+  }
+
+  /* Responsive typography scale */
+  @media (max-width: 375px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @media (min-width: 376px) and (max-width: 640px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 641px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  /* Prevent text selection on interactive elements */
+  button, [role="button"] {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Improve image rendering on mobile */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  /* Fix for iOS input zoom */
+  @media screen and (max-width: 768px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
   }
 
   /* Reduced Motion */
   @media (prefers-reduced-motion: reduce) {
     .gradient-animated {
       animation: none;
+    }
+    
+    html {
+      scroll-behavior: auto;
     }
     
     * {

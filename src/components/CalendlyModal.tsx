@@ -26,8 +26,8 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
             // Clear any existing content
             calendlyDiv.innerHTML = '';
             
-            // Create a custom URL with dark theme parameters
-            const customUrl = 'https://calendly.com/kushagrarawat/linkedin-strategy-call?hide_event_type_details=1&hide_landing_page_details=1&primary_color=4DA3FF&text_color=F2F3F5&background_color=0A0A0A';
+            // Create a custom URL with light theme parameters
+            const customUrl = 'https://calendly.com/kushagrarawat/linkedin-strategy-call?hide_event_type_details=1&hide_landing_page_details=1&primary_color=2d5f3f&text_color=151715&background_color=FAFAFA';
             
             window.Calendly.initInlineWidget({
               url: customUrl,
@@ -37,8 +37,8 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
               // Add custom styling options
               hideEventTypeDetails: true,
               hideLandingPageDetails: true,
-              primaryColor: '#4DA3FF', // Your accent color
-              textColor: '#F2F3F5' // Your text primary color
+              primaryColor: '#2d5f3f', // Deep Forest Green
+              textColor: '#151715' // Dark text for light background
             });
 
             // Apply comprehensive styling overrides after widget loads
@@ -46,8 +46,8 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
               const iframe = calendlyDiv.querySelector('iframe');
               if (iframe) {
                 // Set iframe styles
-                iframe.style.background = '#0A0A0A';
-                iframe.style.backgroundColor = '#0A0A0A';
+                iframe.style.background = '#FAFAFA';
+                iframe.style.backgroundColor = '#FAFAFA';
                 iframe.style.borderRadius = '0';
                 iframe.style.border = 'none';
                 
@@ -59,26 +59,25 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
                     const style = iframeDoc.createElement('style');
                     style.textContent = `
                       body { 
-                        background: #0A0A0A !important; 
-                        background-color: #0A0A0A !important;
-                        color: #F2F3F5 !important; 
+                        background: #FAFAFA !important; 
+                        background-color: #FAFAFA !important;
+                        color: #151715 !important; 
                       }
                       .calendly-popup-content,
                       .calendly-popup-content * { 
-                        background: #0A0A0A !important;
-                        background-color: #0A0A0A !important;
+                        background: #FAFAFA !important;
+                        background-color: #FAFAFA !important;
                       }
-                      [style*="background-color: white"],
-                      [style*="background-color: #fff"],
-                      [style*="background-color: #ffffff"],
-                      [style*="background-color: #f"],
-                      [style*="background-color: #fe"] {
-                        background: #0A0A0A !important;
-                        background-color: #0A0A0A !important;
+                      [style*="background-color: black"],
+                      [style*="background-color: #000"],
+                      [style*="background-color: #000000"] {
+                        background: #FAFAFA !important;
+                        background-color: #FAFAFA !important;
                       }
-                      [style*="color: black"],
-                      [style*="color: #000"] {
-                        color: #F2F3F5 !important;
+                      [style*="color: white"],
+                      [style*="color: #fff"],
+                      [style*="color: #ffffff"] {
+                        color: #151715 !important;
                       }
                     `;
                     iframeDoc.head.appendChild(style);
@@ -145,17 +144,17 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'hsl(var(--bg-page))' }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 safe-area-top safe-area-bottom" style={{ background: 'hsl(var(--bg-page))' }}>
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-scrim-80 backdrop-blur-sm"
         onClick={onClose}
-        style={{ background: 'rgba(10, 10, 10, 0.8)' }}
+        style={{ background: 'rgba(250, 250, 250, 0.85)' }}
       />
       
       {/* Modal */}
       <div 
-        className="relative w-full max-w-4xl h-[90vh] sm:h-[85vh] glass border border-glass-stroke rounded-lg overflow-hidden shadow-elev-2"
+        className="relative w-full max-w-4xl h-[95vh] sm:h-[90vh] md:h-[85vh] glass border border-glass-stroke rounded-xl sm:rounded-2xl overflow-hidden shadow-elev-2"
         style={{ 
           background: 'hsl(var(--bg-page))',
           border: '1px solid rgb(var(--line-subtle))'
@@ -163,18 +162,18 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
       >
         {/* Header */}
         <div 
-          className="flex items-center justify-between p-4 border-b border-line-subtle"
+          className="flex items-center justify-between p-3 sm:p-4 border-b border-line-subtle"
           style={{ 
             background: 'hsl(var(--bg-elev-2))',
             borderBottom: '1px solid rgb(var(--line-subtle))'
           }}
         >
-          <h2 className="text-base sm:text-lg font-semibold text-text-primary">
+          <h2 className="text-sm sm:text-base md:text-lg font-semibold text-text-primary">
             Book Your Free LinkedIn Audit
           </h2>
           <button
             onClick={onClose}
-            className="p-2 text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-bg-3"
+            className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 -mr-1 text-text-secondary hover:text-text-primary transition-colors rounded-lg hover:bg-bg-3"
             aria-label="Close modal"
           >
             <X size={20} />
@@ -184,9 +183,9 @@ const CalendlyModal = ({ isOpen, onClose }: CalendlyModalProps) => {
         {/* Calendly Embed Container */}
         <div 
           id="calendly-modal-embed" 
-          className="w-full h-full"
+          className="w-full h-[calc(100%-48px)] sm:h-[calc(100%-56px)]"
           style={{ 
-            minHeight: '500px',
+            minHeight: '400px',
             background: 'hsl(var(--bg-page))',
             // Override Calendly's default styling
             '--calendly-bg': 'hsl(var(--bg-page))',
