@@ -1,23 +1,23 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const resultImages = [
+  '/website/Result Image/1735023359432.jpeg',
+  '/website/Result Image/a.1.jpeg',
+  '/website/Result Image/a.2.jpeg',
+  '/website/Result Image/a.3.jpeg',
+  '/website/Result Image/b.1.jpeg',
+  '/website/Result Image/b.2.jpeg',
+  '/website/Result Image/Gtp-65Ka0AARhKG.jpeg',
+  '/website/Result Image/Gtp-65NbgAIvNdc.jpeg',
+  '/website/Result Image/Gxh8IfXWgAABEg2.jpeg',
+];
 
 const ResultsCarousel = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  const resultImages = [
-    '/website/Result Image/1735023359432.jpeg',
-    '/website/Result Image/a.1.jpeg',
-    '/website/Result Image/a.2.jpeg',
-    '/website/Result Image/a.3.jpeg',
-    '/website/Result Image/b.1.jpeg',
-    '/website/Result Image/b.2.jpeg',
-    '/website/Result Image/Gtp-65Ka0AARhKG.jpeg',
-    '/website/Result Image/Gtp-65NbgAIvNdc.jpeg',
-    '/website/Result Image/Gxh8IfXWgAABEg2.jpeg',
-  ];
 
   // Duplicate images for infinite scroll effect
   const duplicatedImages = [...resultImages, ...resultImages];
@@ -61,34 +61,39 @@ const ResultsCarousel = () => {
     document.body.style.overflow = 'hidden';
   };
 
-  const closeImage = () => {
+  const goToPrevious = useCallback(() => {
+    setSelectedIndex((prev) => {
+      const newIndex = prev === 0 ? resultImages.length - 1 : prev - 1;
+      setSelectedImage(resultImages[newIndex]);
+      return newIndex;
+    });
+  }, []);
+
+  const goToNext = useCallback(() => {
+    setSelectedIndex((prev) => {
+      const newIndex = prev === resultImages.length - 1 ? 0 : prev + 1;
+      setSelectedImage(resultImages[newIndex]);
+      return newIndex;
+    });
+  }, []);
+
+  const closeImage = useCallback(() => {
     setSelectedImage(null);
     document.body.style.overflow = 'unset';
-  };
-
-  const goToPrevious = () => {
-    const newIndex = selectedIndex === 0 ? resultImages.length - 1 : selectedIndex - 1;
-    setSelectedIndex(newIndex);
-    setSelectedImage(resultImages[newIndex]);
-  };
-
-  const goToNext = () => {
-    const newIndex = selectedIndex === resultImages.length - 1 ? 0 : selectedIndex + 1;
-    setSelectedIndex(newIndex);
-    setSelectedImage(resultImages[newIndex]);
-  };
+  }, []);
 
   // Handle keyboard navigation
   useEffect(() => {
+    if (!selectedImage) return;
+    
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (!selectedImage) return;
       if (e.key === 'Escape') closeImage();
       if (e.key === 'ArrowLeft') goToPrevious();
       if (e.key === 'ArrowRight') goToNext();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedImage, selectedIndex]);
+  }, [selectedImage, closeImage, goToPrevious, goToNext]);
 
   return (
     <>

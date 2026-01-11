@@ -1,5 +1,7 @@
+import { ReactNode } from 'react';
+
 interface MetricChipProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
